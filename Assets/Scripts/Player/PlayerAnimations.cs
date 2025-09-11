@@ -61,6 +61,7 @@ namespace Player
             animator.SetBool(Running, playerMovement.IsMoving);
         }
 
+            
         public void AoeDamage(float speed)
         {
             animator.SetFloat(AttackSpeed, speed);
