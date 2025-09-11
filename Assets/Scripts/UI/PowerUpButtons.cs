@@ -24,9 +24,7 @@ namespace UI
         private PlayerLeftClickAttack _playerLeftClick;
         private PlayerThrowSkill _playerThrowSkill;
 
-
-
-
+        
 
         public void SetPlayerReferences(GameObject player)
         {
@@ -108,8 +106,6 @@ namespace UI
                 UnlockedSkills.Add(type);
             }
         }
-
-
     }
 }
 

@@ -34,7 +34,6 @@ namespace Player.Skills
         private bool _activateLightningStrike = false;
         
         
-        
         private void Update()
         {
             AoeCooldownAndMovementFrozen();
@@ -165,7 +164,7 @@ namespace Player.Skills
                    {
                        StartCoroutine(ChainLightningCoroutine(coll.transform, finalDamage * 0.3f, alreadyHitEnemies, maxChains));
                    }
-                    
+                   
                }
            }
            Destroy(vfxInstance, vfxPrefabLifetime);

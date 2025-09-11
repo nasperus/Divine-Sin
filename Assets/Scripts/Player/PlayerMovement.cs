@@ -54,7 +54,6 @@ namespace Player
         private void Update()
         {
             
-            
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 Application.Quit();
@@ -164,7 +163,6 @@ namespace Player
             }
             return false;
         }
-        
         
     }
 }

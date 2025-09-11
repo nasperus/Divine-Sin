@@ -33,7 +33,7 @@ namespace Room_Generation
 
        private void Awake()
         {
-            QualitySettings.vSyncCount = 0;
+            QualitySettings.vSyncCount = 1;
             Application.targetFrameRate = 60;
         }
 
@@ -44,15 +44,14 @@ namespace Room_Generation
 
         }
 
-        private IEnumerator RunAgain()
-        {
-            while (true)
-            {
-                powerUpPanel.ShowRandomPowerUps(5);
-                yield return new WaitForSeconds(2);
-            }
-
-        }
+        // private IEnumerator RunAgain()
+        // {
+        //     while (true)
+        //     {
+        //         powerUpPanel.ShowRandomPowerUps(5);
+        //         yield return new WaitForSeconds(2);
+        //     }
+        // }
 
         private void OnEnable()
         {
