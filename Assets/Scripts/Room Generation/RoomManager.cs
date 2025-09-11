@@ -31,10 +31,10 @@ namespace Room_Generation
         public static float IncreaseAttackSpeed { get; private set; } = 0;
 
 
-        private void Awake()
+       private void Awake()
         {
-            QualitySettings.vSyncCount = 1;
-            Application.targetFrameRate = 240;
+            QualitySettings.vSyncCount = 0;
+            Application.targetFrameRate = 60;
         }
 
         private void Start()
