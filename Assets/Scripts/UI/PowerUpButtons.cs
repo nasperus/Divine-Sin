@@ -98,10 +98,12 @@ namespace UI
             {
                 action?.Invoke();
             }
-            if (type is PowerUpType.ActivateLightningStrike or PowerUpType.ActivateDot ||
-                type == PowerUpType.ActivateFire ||
-                type == PowerUpType.ActivateChainLightning ||  
-                type == PowerUpType.ActivateAoeDot)
+            if (type is 
+                PowerUpType.ActivateLightningStrike or 
+                PowerUpType.ActivateDot or 
+                PowerUpType.ActivateFire or 
+                PowerUpType.ActivateChainLightning or 
+                PowerUpType.ActivateAoeDot)
             {
                 UnlockedSkills.Add(type);
             }

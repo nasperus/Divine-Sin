@@ -99,7 +99,6 @@ namespace Room_Generation
                 SpawnBossRoom();
         }
         
-
         private void SpawnNewRoom()
         {
             if (_currentRoom != null)

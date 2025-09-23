@@ -36,8 +36,7 @@ namespace Player.Skills
 
             _dotCoroutine = StartCoroutine(ApplyDamageOverTime());
         }
-
-
+        
 
         private IEnumerator ApplyDamageOverTime()
         {

@@ -46,7 +46,6 @@ namespace Enemy.Mutant
                 }
             }
         }
-
         public override void Exit(){}
        
     }

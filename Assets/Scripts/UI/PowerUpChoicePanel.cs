@@ -153,7 +153,7 @@ namespace UI
             { PowerUpType.DotDamage, "+40% DoT Damage" },
             { PowerUpType.AoeDamage, "+20% AoE Fire Damage" },
             { PowerUpType.ActivateChainLightning, "Lightning Strike Hit Nearby Enemies" },
-            { PowerUpType.ActivateAoeDot, "Dot Now Spread Nearby Enemies" },
+            { PowerUpType.ActivateAoeDot, "Dot Now Spread To Nearby Enemies" },
             { PowerUpType.LifeSteal, "LifeSteal (Higher Damage Higher Value)" },
             { PowerUpType.Evasion, "+20% Evasion" },
             { PowerUpType.AutoAttack, "+20% AutoAttack Damage" },

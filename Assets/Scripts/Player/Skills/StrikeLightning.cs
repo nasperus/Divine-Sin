@@ -73,20 +73,11 @@ namespace Player.Skills
        }
 
         public void ActivateChainLightning() => _activateChainLightning = true;
-       
         public void ActivateLightningStrike() => _activateLightningStrike = true;
-      
-
-        public void IncreaseLightningStrikeDamage(float multiplier)
-        {
-            Stats?.IncreaseStats(StatType.Damage, multiplier);
-        }
-
-        public void IncreaseLightningStrikeRadius(float multiplier)
-        {
-            Stats?.IncreaseStats(StatType.Radius, multiplier);
-        }
-       
+        public void IncreaseLightningStrikeDamage(float multiplier){Stats?.IncreaseStats(StatType.Damage, multiplier);}
+        public void IncreaseLightningStrikeRadius(float multiplier){Stats?.IncreaseStats(StatType.Radius, multiplier);}
+        
+        
         private void UpdateAnimationSpeed()
         {
             var animationSpeed = ApplyStatsToAbilities.ApplyHasteCastAndAttackSpeed(statCollection);
@@ -104,10 +95,8 @@ namespace Player.Skills
         //         Time.timeScale = 1f;
         //     }).SetUpdate(true).SetId("HitStop");
         // }
-        public void TriggerLightningAttack()
-        {
-            CastLightning();
-        }
+        public void TriggerLightningAttack(){CastLightning();}
+       
         
        private void AoeCooldownAndMovementFrozen()
        {
@@ -164,13 +153,12 @@ namespace Player.Skills
                    {
                        StartCoroutine(ChainLightningCoroutine(coll.transform, finalDamage * 0.3f, alreadyHitEnemies, maxChains));
                    }
-                   
                }
            }
            Destroy(vfxInstance, vfxPrefabLifetime);
        }
-    
-
+       
+       
        private IEnumerator ChainLightningCoroutine(Transform origin, float baseDamage, List<Transform> alreadyHitEnemies,
            int remainingChains)
        {
