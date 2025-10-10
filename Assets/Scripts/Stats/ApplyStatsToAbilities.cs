@@ -83,7 +83,6 @@ namespace Stats
             var mana = stats.GetStatValue(StatTypeEnum.Mana);
             return baseMana * (1f + mana * 0.01f);
         }
-
-  
+        
     }
 }

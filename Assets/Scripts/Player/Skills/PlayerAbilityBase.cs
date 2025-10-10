@@ -63,7 +63,6 @@ namespace Player.Skills
             {
                 IsLeftClicking = false;
             }
-            
         }
 
         protected void CalculateMouseRay()

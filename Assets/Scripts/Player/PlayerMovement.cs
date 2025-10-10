@@ -3,6 +3,7 @@ using Player.Skills;
 using Stats;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEditor.Callbacks;
 
 namespace Player
 {
@@ -25,10 +26,10 @@ namespace Player
         [SerializeField] private StatCollection statCollection;
         private float _statMovementSpeed;
         private Vector2 _input;
+        private Vector3 _movementVelocity;
         private Vector3 _movementDirection;
         private Camera _mainCamera;
         private Vector3 _velocityRef;
-
         private PlayerAbilityBase[] _playerAbilities;
 
         private float _calculatedMovementSpeed;
@@ -84,6 +85,7 @@ namespace Player
         {
             _input = value.Get<Vector2>();
         }
+        
         
 
         private void CalculateCameraRelativeDirection()

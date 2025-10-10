@@ -34,7 +34,7 @@ namespace Room_Generation
        private void Awake()
         {
             QualitySettings.vSyncCount = 1;
-            Application.targetFrameRate = 60;
+            Application.targetFrameRate = 120;
         }
 
         private void Start()

@@ -42,7 +42,6 @@ namespace Player.Skills
 
          private  void Awake()
         {
-            
             InitializeAbilities();
         }
 
@@ -150,7 +149,7 @@ namespace Player.Skills
                    damageable?.TakeDamage(finalDamage);
                    alreadyHitEnemies.Add(coll.transform);
                    if (_activateChainLightning)
-                   {
+                   { 
                        StartCoroutine(ChainLightningCoroutine(coll.transform, finalDamage * 0.3f, alreadyHitEnemies, maxChains));
                    }
                }

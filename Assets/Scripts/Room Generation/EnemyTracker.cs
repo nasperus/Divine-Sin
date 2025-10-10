@@ -23,7 +23,8 @@ namespace Room_Generation
             Instance = this;
             ResetTracker();
         }
-
+       
+            
         public void AddEnemiesToTrack(int count)
         {
             _totalEnemiesToSpawn += count;
