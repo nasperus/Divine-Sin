@@ -56,8 +56,7 @@ Assets/
     Rooms/                 # Room controller, wave logic, progression
     Systems/               # GameManager, run progression, global events
     UI/                    # HUD, reward choice UI, popup feedback
-  ScriptableObjects/       # Stat & ability definitions (where applicable)
-ProjectSettings/
+  ScriptableObjects/       # Stat & ability definitions 
 ```
 
 
