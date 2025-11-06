@@ -43,18 +43,22 @@ https://github.com/nasperus
 
 ## 📁 Project Structure (high level)
 
+```
 Assets/
-Prefabs/ # Player, enemies, projectiles, UI, room prefabs
-Scenes/ # Gameplay scenes and boss arena
-Scripts/
-Abilities/ # Base ability class + individual abilities
-Combat/ # Damage handling, crit logic, hit effects
-Enemies/ # Enemy AI states, movement, attack logic
-Player/ # Movement, dash, input, player stats handler
-Rooms/ # Room controller, wave logic, progression
-Systems/ # GameManager, run progression, global events
-UI/ # HUD, reward choice UI, popup feedback
-ScriptableObjects/ # Stat & ability definitions (where applicable)
+  Art/                     # Sprites, VFX, UI visuals
+  Prefabs/                 # Player, enemies, projectiles, UI, room prefabs
+  Scenes/                  # Gameplay scenes and boss arena
+  Scripts/
+    Abilities/             # Base ability class + individual abilities
+    Combat/                # Damage handling, crit logic, hit effects
+    Enemies/               # Enemy AI states, movement, attack logic
+    Player/                # Movement, dash, input, player stats handler
+    Rooms/                 # Room controller, wave logic, progression
+    Systems/               # GameManager, run progression, global events
+    UI/                    # HUD, reward choice UI, popup feedback
+  ScriptableObjects/       # Stat & ability definitions (where applicable)
 ProjectSettings/
+```
+
 
 
