@@ -43,6 +43,7 @@ https://github.com/nasperus
 
 ## 📁 Project Structure (high level)
 
+Assets/
 Prefabs/ # Player, enemies, projectiles, UI, room prefabs
 Scenes/ # Gameplay scenes and boss arena
 Scripts/
@@ -54,5 +55,6 @@ Rooms/ # Room controller, wave logic, progression
 Systems/ # GameManager, run progression, global events
 UI/ # HUD, reward choice UI, popup feedback
 ScriptableObjects/ # Stat & ability definitions (where applicable)
+ProjectSettings/
 
 
