@@ -41,7 +41,7 @@ https://github.com/nasperus
 
 ---
 
-## 📁 Project Structure (high level)
+## 📁 Project Structure
 
 ```
 Assets/
