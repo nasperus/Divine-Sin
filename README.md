@@ -1,63 +1,81 @@
-# Divine-Sin
+# Divine Sin
 
-**Divine-Sin** is a fast-paced, Hades-style roguelike built in Unity.  
-You fight through procedurally linked rooms, defeat enemies and bosses, and choose between **abilities** or **stat upgrades** after each clear to shape your build on every run.
+**Divine Sin** is a **Hades-style action roguelike** built in **Unity**.  
+The game focuses on **fast, responsive combat**, **stat-driven build variety**, and **room-based progression**, where every run feels unique and player decisions shape the playstyle.
 
-https://github.com/nasperus
-
----
-
-## 🎮 Core Features
-
-- **Hades-style roguelike loop** – clear rooms, choose a reward, push deeper.
-- **Abilities system** – unlock/upgrade skills that modify attacks, movement, and utility.
-- **Character stats** – increase Health, Damage, Attack Speed, Movement Speed, Crit, and more.
-- **Enemy AI** – melee/ranged archetypes with state-based behavior.
-- **Boss encounter** – unique arena and multi-phase patterns.
-- **Room progression** – sequence of combat rooms with reward choices and a boss gate.
-- **Responsive feel** – tight movement, dash, hit reactions, and readable timing.
+You fight through linked combat arenas, defeat enemies, collect upgrades, and push deeper toward a boss encounter — growing stronger through a scalable stat and ability system.
 
 ---
 
-## 🧩 Gameplay Loop
+## 🎮 Core Gameplay Pillars
 
-1. **Enter a room** → combat starts.  
-2. **Defeat all enemies** → “Room Cleared.”  
-3. **Choose a reward**:  
-   - **Ability** (new or upgrade), or  
-   - **Stat boost** (e.g., +Damage, +Health, +Haste).  
-4. **Advance to the next room** → repeat and build your run.  
-5. **Boss room** → survive patterns and phases to win the run.
-
----
-
-## 🛠 Tech Stack
-
-- **Unity**: 2022.3 LTS or Unity 6 (tested locally)
-- **Language**: C#
-- **AI/Navigation**: NavMesh/state machine–driven behavior
-- **Data**: ScriptableObjects for stats/abilities (where applicable)
-- **Version Control**: Git + GitHub
+| Pillar | Description |
+|-------|-------------|
+| **Fast, Responsive Combat** | Dash, sprint, attack, and cast abilities with immediate, fluid control. |
+| **Ability & Stat Scaling** | Build variety through new abilities or stat upgrades after each room. |
+| **Room-Based Progression** | Fight, clear, choose your reward, move forward — repeat the roguelike loop. |
+| **Skill-Based Survival** | Success depends on movement, timing, and decision-making. |
 
 ---
 
-## 📁 Project Structure
+## 🔥 Core Features (Detailed)
 
-```
-Assets/
-  Art/                     # Sprites, VFX, UI visuals
-  Prefabs/                 # Player, enemies, projectiles, UI, room prefabs
-  Scenes/                  # Gameplay scenes and boss arena
-  Scripts/
-    Abilities/             # Base ability class + individual abilities
-    Combat/                # Damage handling, crit logic, hit effects
-    Enemies/               # Enemy AI states, movement, attack logic
-    Player/                # Movement, dash, input, player stats handler
-    Rooms/                 # Room controller, wave logic, progression
-    Systems/               # GameManager, run progression, global events
-    UI/                    # HUD, reward choice UI, popup feedback
-  ScriptableObjects/       # Stat & ability definitions 
-```
+### ⚔️ Player Combat & Abilities
+- Camera-relative movement with smooth acceleration & responsive dash.
+- Skill system supporting:
+  - Damage abilities
+  - Debuffs / DoT effects
+  - Heals and lifesteal
+  - Ranged skill throws
+  - Area-based spell effects
+- Animation-event-driven timing for precise combat feel.
+
+### 🌌 Power-Up Reward System (Hades-Inspired)
+After clearing a room, you choose one of several upgrades:
+- **Stat Boost** (e.g., +Haste, +Crit, +Vitality, +Move Speed)
+- **Ability Upgrade** (enhance or modify existing abilities)
+- **New Ability Unlock**
+
+Each run allows new **synergy paths** and **playstyle identities**.
+
+Flow:
+## 🧠 Modular Stat System
+
+All core stats are defined as **ScriptableObjects**, making balance and tuning easy.
+
+**Stats Include:**  
+`Haste · Critical · Mastery · Vitality · Armor · Mana · Movement Speed`
+
+**Flow:**
+```text
+StatOS (Scriptable Data)
+        ↓
+BaseStats (Starting Player Values)
+        ↓
+RuntimeStats (Dynamic, Modified During Run)
+        ↓
+Abilities & UI Update Automatically
 
 
+Benefits: **extendable**, **maintainable**, and **easy to balance** without touching core code.
+
+### 🤖 Enemy AI with Finite State Machines
+Each enemy is composed of focused states (e.g., **Chase**, **Attack**, **Hit**, **Death**) managed by a shared **EnemyStateMachine**.  
+Current archetypes:
+- **Mutant** — pressure melee unit (chase/attack loop, hit reactions)
+- **Archer** — ranged kiter with **reposition** behavior and projectile **Arrow**
+- **Warlock Boss** — multi-phase fight with distinct **move/attack** patterns and arena pacing
+
+FSMs keep behavior modular, debuggable, and easy to extend.
+
+### 🧱 Room & Level Progression
+- Rooms define enemy spawns, waves, exits, and next-room routing.
+- **RoomManager** tracks enemy defeat; **PortalSpawner/EnemySpawner** handle transitions.
+- Supports linear flows today; designed for branching paths and randomized runs.
+
+---
+
+## 🧩 System Architecture Overview
+
+### Ability System
 
