@@ -57,7 +57,7 @@ RuntimeStats (Dynamic, Modified During Run)
 Abilities & UI Update Automatically
 
 
-Benefits: **extendable**, **maintainable**, and **easy to balance** without touching core code.
+Benefits: extendable, maintainable, and easy to balance without touching core code.
 
 ### 🤖 Enemy AI with Finite State Machines
 Each enemy is composed of focused states (e.g., **Chase**, **Attack**, **Hit**, **Death**) managed by a shared **EnemyStateMachine**.  
@@ -78,4 +78,46 @@ FSMs keep behavior modular, debuggable, and easy to extend.
 ## 🧩 System Architecture Overview
 
 ### Ability System
+
+- **PlayerAbilityBase** standardizes activation, cooldowns, and hit events.
+- **AbilityFactory** removes prefab hard-wiring; abilities can be created/swapped at runtime.
+- **Modifiers** transform behavior (damage, radius, duration, cooldown) using current **RuntimeStats**.
+- Adding a new ability typically requires **one script + one data asset**.
+
+### Stat System
+Key scripts: `BaseStats`, `RuntimeStats`, `StatCollection`, `PlayerStatsManager`, `ApplyStatsToAbilities`, `AddingStatValues`  
+Key ScriptableObjects: `Armor.asset`, `Critical.asset`, `Haste.asset`, `Mana.asset`, `Mastery.asset`, `MovementSpeed.asset`, `Vitality.asset`  
+- Clean separation of **definition** (SOs) and **execution** (runtime).
+- Abilities read from **RuntimeStats** at cast time → buffs apply instantly.
+
+### Enemy & Boss AI
+Shared: `EnemyStateMachine`, `EnemyState`, `EnemyMovement`, `IEnemyDamageable`  
+- **Archer**: `ArcherStateMachine`, `ArcherChaseState`, `ArcherAttackState`, `ArcherRepositionState`, `ArcherHitState`, `ArcherDeathState`, `Arrow`
+- **Mutant**: `MutantChaseState`, `MutantAttackState`, `MutantHitState`, `MutantDeathState`, plus `EnemyAnimations`, `EnemyDealsDamage`
+- **Warlock Boss**: `WarlockStateMachine`, `WarlockMoveState`, `WarlockAttackState`, `WarlockHealth`, `WarlockDeath`, `WarlockAnimationEvents`, `Skills/SkillDamage`
+
+### Rooms, Levels & Spawning
+- Levels: `Levels/Level1.prefab` … `Level5.prefab`, `Boss Room.prefab`
+- Control flow: `GenerateLevel`, `RoomManager`, `RoomData`, `RoomExit`, `EnemyTracker`, `GameManager`
+- Spawning & transitions: `PortalSpawner`, `EnemySpawner`
+
+### UI / UX
+- **Reward UI** and HUD: `UI/Canvas.prefab`, `PowerUpChoicePanel`, `PowerUpButtons`, `PowerUpTypes`
+- Built for fast, readable decisions after each room.
+
+---
+
+## 🗂 Project Structure 
+,,,
+Assets/
+  Ability System/         ← Base classes, modifiers, runtime creation
+  Stats/                  ← Stat ScriptableObjects + runtime stat aggregation
+  Player/                 ← Movement, dash, abilities, animations, combat
+  Enemy/                  ← State Machines for Archer, Mutant, Boss
+  Room Generation/        ← Room transitions, level linking, exits
+  UI/                     ← Power-up selection UI + HUD
+  Portals/                ← EnemySpawner & PortalSpawner
+,,,
+---
+
 
