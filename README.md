@@ -1,6 +1,6 @@
 # Divine Sin
 
-**Divine Sin** is a **Hades-style action roguelike** built in **Unity**.  
+**Divine Sin** is a isometric **Hades-style action roguelike** built in **Unity**.  
 The game focuses on **fast, responsive combat**, **stat-driven build variety**, and **room-based progression**, where every run feels unique and player decisions shape the playstyle.
 
 You fight through linked combat arenas, defeat enemies, collect upgrades, and push deeper toward a boss encounter — growing stronger through a scalable stat and ability system.
