@@ -14,7 +14,7 @@ namespace Stats
         private PlayerMana playerMana;
         private PlayerMovement playerMovement;
 
-        // Cache last displayed values to avoid unnecessary updates (optional)
+       
         private float lastHaste, lastMastery, lastCrit, lastVit, lastArmor, lastMana, lastMove;
         private float lastCurrentHealth, lastMaxHealth, lastCurrentMana, lastMaxMana, lastCurrentMovement;
 
